@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CGPA Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <header>
+      <h1>CGPA Calculator</h1>
+      <button class="toggle-mode" type="button" onclick="toggleMode()">Dark</button>
+    </header>
+
+    <form id="cgpaForm">
+      <div id="courseInputs">
+        <!-- Course input fields will be added here dynamically -->
+      </div>
+
+      <button type="button" class="add-course" onclick="addCourseInput()">Add Course</button>
+      <button class="calculate-cgpa" type="button" onclick="calculateCGPA()">Calculate CGPA</button>
+
+      <div id="result"></div>
+    </form>
+  </div>
+
+</body>
+</html>

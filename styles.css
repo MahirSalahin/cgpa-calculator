@@ -1,0 +1,198 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    max-width: 80%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+}
+
+.input-container input[type="text"],
+.input-container input[type="number"],
+.input-container select {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.input-container button.delete-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: auto;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-container button.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.add-course {
+    background-color: #3498db;
+    color: #fff;
+}
+
+button.add-course:hover {
+    background-color: #2980b9;
+}
+
+.input-container button.delete-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-container button.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+button.calculate-cgpa {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+button.calculate-cgpa:hover {
+    background-color: #219a52;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+
+h1 {
+    margin: 0;
+}
+
+.toggle-mode {
+    border: none;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+    background-color: #414141;
+    color: #ffffff;
+    font-size: 7px;
+    cursor: pointer;
+    outline: none;
+    margin-left: 5px;
+}
+
+.toggle-mode:hover {
+    background-color: #171717;
+}
+
+#result {
+
+    display: none;
+    color: #219a52;
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+#result span {
+    display: inline-block;
+    opacity: 0.5;
+    font-family: fantasy;
+    animation: fadeIn 2.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+.container.dark-mode {
+    background-color: #333;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+h1.dark-mode {
+    color: #ffffff;
+    background-color: #333;
+}
+
+header.dark-mode {
+    background-color: #333;
+}
+
+.course-input input.dark-mode,
+.course-input select.dark-mode {
+    background-color: #444;
+    color: #fff;
+}
+
+button.dark-mode {
+    background-color: #b7b7b7;
+    color: #000000;
+}
+
+button.dark-mode:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
