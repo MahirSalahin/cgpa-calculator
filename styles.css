@@ -3,8 +3,9 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
     background-color: #f8f8f8;
     transition: background-color 0.3s ease;
@@ -12,11 +13,13 @@ body {
 
 .container {
     max-width: 80%;
+    min-width: 30%;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin-top: 100px;
 }
 
 h1 {
@@ -29,6 +32,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .input-container {
@@ -105,10 +109,13 @@ button.calculate-cgpa:hover {
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 20px;
     background-color: #ffffff;
+    width: max-content;
+    text-align: center;
+    position: fixed;
+    top: 0;
 }
 
 
@@ -140,6 +147,7 @@ h1 {
     color: #219a52;
     font-size: 2em;
     margin-top: 20px;
+    padding: 20px;
 }
 
 #result span {
@@ -174,11 +182,11 @@ body.dark-mode {
 
 h1.dark-mode {
     color: #ffffff;
-    background-color: #333;
+    background-color: #222;
 }
 
 header.dark-mode {
-    background-color: #333;
+    background-color: #222;
 }
 
 .course-input input.dark-mode,

@@ -33,6 +33,10 @@ addCourseInput();
 function removeCourseInput(button) {
     const courseInputDiv = button.parentElement.parentElement;
     courseInputDiv.remove();
+    // Update courseCounter after removing a course input
+    courseCounter = document.querySelectorAll('.course-input').length + 1;
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = ''; // Clear previous content
 }
 
 function calculateCGPA() {
