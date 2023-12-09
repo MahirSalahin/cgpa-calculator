@@ -1,0 +1,2 @@
+# CGPA CALCULATOR
+This is a CGPA Calculator. There is a GitHub Pages site where you can access the calculator directly in your web browser. Visit  [CGPA Calculator](https://mahirsalahin.github.io/CGPA-CALCULATOR/) to use the calculator online.

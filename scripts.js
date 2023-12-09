@@ -8,7 +8,7 @@ function addCourseInput() {
     const inputContainer = document.createElement('div');
     inputContainer.className = 'input-container';
     inputContainer.innerHTML = `
-    <input type="text" id="course${courseCounter}Name" value="Course ${courseCounter}" required>
+    <input type="text" id="course${courseCounter}Name" value="Course name" required>
     <input type="number" id="course${courseCounter}Credit" placeholder="Credit" min="0.25" step="0.25" required>
     <select id="course${courseCounter}Grade" required>
       <option value="4.00">A+</option>
@@ -28,16 +28,46 @@ function addCourseInput() {
     courseDiv.appendChild(inputContainer);
     courseInputsDiv.appendChild(courseDiv);
     courseCounter++;
+
+    // Clear previous content
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = '';
 }
+
 addCourseInput();
+
 function removeCourseInput(button) {
     const courseInputDiv = button.parentElement.parentElement;
+    const gradeSelect = courseInputDiv.querySelector('select'); // Get the grade select element
+    const selectedGrade = gradeSelect.value; // Store the selected grade value
+
     courseInputDiv.remove();
-    // Update courseCounter after removing a course input
-    courseCounter = document.querySelectorAll('.course-input').length + 1;
+
+    // Get all remaining course input elements
+    const courseInputs = document.querySelectorAll('.course-input');
+
+    // Reset the courseCounter to match the actual number of remaining course inputs
+    courseCounter = courseInputs.length + 1;
+
+    // Renumber the remaining course inputs sequentially
+    courseInputs.forEach((courseInput, index) => {
+        const inputFields = courseInput.querySelectorAll('input, select');
+        inputFields.forEach(input => {
+            input.id = input.id.replace(/\d+/, index + 1);
+            input.value = input.value.replace(/\d+/, index + 1);
+
+            if (input.tagName === 'SELECT' && input.id.includes('Grade')) {
+                // Check if it's a grade selector and assign the stored value to the updated selector
+                input.value = selectedGrade;
+            }
+        });
+    });
+
+    // Clear previous content
     const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = ''; // Clear previous content
+    resultDiv.innerHTML = '';
 }
+
 
 function calculateCGPA() {
     let totalGradePoints = 0;
